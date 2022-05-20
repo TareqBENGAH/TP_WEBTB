@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+   {% load static %}
+   <link rel="stylesheet" href="{%static 'Films_MCU/main.css' %}">
+   <title>{% block title %} FilmsMcu {% endblock %} </title>
+  </head>
+  <body>
+    <nav><a href="/Films_MCU/home">Home</a><a href="/Films_MCU/ajout2">Ajouter un superhero</a><a href="/Films_MCU/ajout">Ajouter un film</a></nav>
+    {% block content %}
+    {% endblock %}
+  </body>
+ </html>

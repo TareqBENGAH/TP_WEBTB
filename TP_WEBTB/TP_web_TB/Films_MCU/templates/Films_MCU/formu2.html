@@ -1,0 +1,19 @@
+{% extends "Films_MCU/main.html" %}
+{% block title %}
+FilmsMcu - Ajouter Superhero
+{% endblock %}
+{% block content %}
+ <div class="conteneur">
+  {% if id != "" %}
+        <h2>Modifier un Superhero</h2>
+        <form method="post" action="/Films_MCU/traitementupdate2/{{id}}/">
+  {% else %}
+        <h2>Ajouter un Superhero</h2>
+        <form method="post" action="/Films_MCU/traitement2/">
+  {% endif %}
+      {% csrf_token %}
+      {{ form.as_ul }}
+      <input type="submit" value="CONFIRMER">
+  </form>
+ </div>
+{% endblock %}

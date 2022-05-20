@@ -1,0 +1,14 @@
+{% extends "Films_MCU/main.html" %}
+{% block title %}
+FilmsMcu - Film
+{% endblock %}
+{% block content %}
+<div class="conteneur">
+ <div class="contenu">
+  <h1> Details du film : {{film.nom_film}}</h1>
+  <p>Ce film intitulé {{film.nom_film}} a été realisé par {{film.producteur}} le {{film.date}}.</p>
+  <h2>Résumé du film:</h2>
+  <p>{{film.resume}}</p>
+ </div>
+</div>
+{% endblock %}

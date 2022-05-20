@@ -1,0 +1,24 @@
+{% extends "Films_MCU/main.html" %}
+{% block title %}
+FilmsMcu - Superhero
+{% endblock %}
+{% block content %}
+<div class="conteneur">
+ <div class="contenu">
+  <h1> Details du superhero </h1>
+  <p>Ce superhero s'appelle {{superhero.nom}}. Il a été créé par {{superhero.createur}} en {{superhero.date}}.
+  <h2> Description: </h2>
+     <p> {{superhero.description}} </p>
+  <h2> Ses super pouvoirs: </h2>
+     <p> {{superhero.super_pouvoir}} </p>
+  <h2> Acteurs ayant joué son role: </h2>
+     <p> {{superhero.acteurs}} </p>
+  <h2> Films sur ce superhero: </h2>
+  <ol>
+        {% for i in films %}
+            <li>{{i}} <a class="link" href="/Films_MCU/affiche/{{i.id}}">Affiche</a><a class="link" href="/Films_MCU/update/{{i.id}}">Update</a><a class="link" href="/Films_MCU/delete/{{i.id}}">Delete</a></li>
+        {% endfor %}
+  </ol>
+ </div>
+</div>
+{% endblock %}

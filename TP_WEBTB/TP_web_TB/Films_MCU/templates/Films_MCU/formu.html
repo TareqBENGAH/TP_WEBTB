@@ -1,0 +1,19 @@
+{% extends "Films_MCU/main.html" %}
+{% block title %}
+FilmsMcu - Ajouter Film
+{% endblock %}
+{% block content %}
+ <div class="conteneur">
+  {% if id != "" %}
+        <h2>Modifier un Film</h2>
+        <form method="post" action="/Films_MCU/traitementupdate/{{id}}/">
+  {% else %}
+        <h2>Ajouter un Film</h2>
+        <form method="post" action="/Films_MCU/traitement/">
+  {% endif %}
+      {% csrf_token %}
+      {{ form.as_ul }}
+      <input type="submit" value="CONFIRMER">
+  </form>
+ </div>
+{% endblock %}
